@@ -1,0 +1,65 @@
+<html>
+    <body>
+    <form name=myform method=post action="form_gravar.php" enctype="multipart/form-data">
+        <table border="1" width="400px" bgcolor="#f0f0f0" style="border-collapse:collapse">
+            <tr>
+                <td valign=top width="200px"><b><font face="Arial">Nome</font></b></td>
+                <td><input maxlength="40" name="nome" value="Pablo Dall Oglio" type="text"size="14"></td>
+            </tr>
+            <tr>
+                <td valign=top width="140px"><b><font face="Arial">Senha</font></b></td>
+                <td><input name="senha" value="1234" type="password" size="14"></td>
+            </tr>
+            <tr>
+                <td valign=top width="140px"><b><font face="Arial">Sexo</font></b></td>
+                <td>
+                    <input name="sexo" value="M" type="radio" checked="1">Masculino</input><br>
+                    <input name="sexo" value="F" type="radio">Feminino</input><br>
+                </td>
+            </tr>
+            <tr>
+                <td valign=top width="140px"><b><font face="Arial">Religião</font></b></td>
+                <td>
+                    <select name="religiao">
+                        <option value="0">Clique Aqui</option>
+                        <option value="C">Católica</option>
+                        <option value="E">Evangélica</option>
+                        <option value="U">Igreja Universal</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td valign=top width="140px"><b><font face="Arial">Idiomas</font></b></td>
+                <td>
+                    <input name="idiomas[]" value="E" type="checkbox">Inglês<br>
+                    <input name="idiomas[]" value="S" type="checkbox">Espanhol<br>
+                    <input name="idiomas[]" value="I" type="checkbox">Italiano<br>
+                    <input name="idiomas[]" value="F" type="checkbox">Francês<br>
+                </td>
+            </tr>
+            <tr>
+                <td valign=top width="140px"><b><font face="Arial">Estilo</font></b></td>
+                <td>
+                    <select name="estilo[]" multiple>
+                        <option value="C">Clássico</option>
+                        <option value="T">Contemporâneo</option>
+                        <option value="A">Alternativo</option>
+                        <option value="E">Elegante</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td valign=top width="140px"><b><font face="Arial">Fotografia</font></b></td>
+                <td><input name="fotografia" type="file"></td>
+            </tr>
+            <tr>
+                <td valign=top width="140px"><b><font face="Arial">Curriculo</font></b></td>
+                <td><textarea name="curriculo" rows="4" cols="40">digite o currículo aqui</textarea></td>
+            </tr>
+        </table>
+        <input type="submit" value="gravar">
+        <input type="reset" value="limpar">
+        <input type="button" value="botao" onclick="alert('teste123')">
+    </form>
+</body>
+</html>
