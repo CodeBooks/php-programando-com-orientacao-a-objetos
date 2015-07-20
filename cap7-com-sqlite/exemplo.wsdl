@@ -1,0 +1,42 @@
+<?xml version ='1.0' encoding ='ISO-8859-1' ?>
+<definitions name='Exemplo'
+	   targetNamespace='urn:Exemplo'
+	   xmlns:tns='http://example.org/Exemplo'
+	   xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+	   xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+	   xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/'
+	   xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+	   xmlns='http://schemas.xmlsoap.org/wsdl/'>
+<message name='getNomeRequest'>
+	   <part name='codigo' type='xsd:string'/>
+</message>
+<message name='getNomeResponse'>
+	   <part name='resultado' type='xsd:string[]'/>
+</message>
+<portType name='ExemploPortType'>
+	   <operation name='getNome'>
+		      <input message='tns:getNomeRequest'/>
+		      <output message='tns:getNomeResponse'/>
+	   </operation>
+</portType>
+<binding name='ExemploBinding' type='tns:ExemploPortType'>
+	   <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+	   <operation name='getNome'>
+		      <soap:operation soapAction='exemplo#getNome'/>
+		      <input>
+			         <soap:body use='encoded' namespace='exemplo'
+			         encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+		      </input>
+		      <output>
+			         <soap:body use='encoded' namespace='exemplo'
+			         encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+		      </output>
+	    </operation>
+</binding>
+<service name='ExemploService'>
+	   <port name='ExemploPort' binding='ExemploBinding'>
+		      <soap:address location='http://127.0.0.1/servidor.php'/>
+	   </port>
+</service>
+</definitions>
+

@@ -1,0 +1,42 @@
+<?php
+/*
+ * classe ClientesForm
+ * formulário de cadastro de Clientes
+ */
+class ClientesForm extends TPage
+{
+    private $form; // formulário
+
+    /*
+     * método construtor
+     * cria a página e o formulário de cadastro
+     */
+    function __construct()
+    {
+        parent::__construct();
+        // instancia um formulário
+        $this->form = new TForm('form_clientes');
+
+        // instancia uma tabela
+        $table = new TTable;
+
+        // adiciona a tabela ao formulário
+        $this->form->add($table);
+
+        $options = array();
+        $options[1] = 'Um';
+        $options[2] = 'Dois';
+        // cria os campos do formulário
+        $teste1    = new TCheckGroup('teste1');
+
+        // adiciona uma linha para o campo código
+        $row=$table->addRow();
+        $row->addCell(new TLabel('Código:'));
+        $row->addCell($codigo);
+
+
+        // adiciona o formulário na página
+        parent::add($this->form);
+    }
+}
+?>
