@@ -1,0 +1,66 @@
+<style type='text/css' media='screen'>
+/*
+ * estilo utilizado para a tabela contida pelo painel
+ */
+.table_style
+{
+    font-family: Arial, Verdana, Sans-serif;
+    font-size: 10pt;
+    border-collapse: collapse;
+}
+
+/*
+ * estilo utilizado para o primeiro painel
+ */
+.panel_style1
+{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 200px;
+    height: 200px;
+    z-index: 10000;
+}
+
+/*
+ * estilo utilizado para o segundo painel
+ */
+.panel_style2
+{
+    position: absolute;
+    left: 100px;
+    top: 80px;
+    width: 200px;
+    height: 200px;
+    z-index: 10000;
+}
+</style>
+
+<div id="panel1" class="panel_style1">
+    <table bgcolor="#e0e0e0" width="100%" border="1" height="100%" class="table_style">
+        <tr bgcolor="#707070" height="20px">
+            <td width="100%"><font color=white><b>janela1</b></font></td>
+            <td align="center" valign="middle">
+                <a href="#" onclick="document.getElementById('panel1').style.display='none'">
+                <img border=0 src="app.images/ico_close.png"></a>
+			</td>
+		</tr>
+		<tr valign="top">
+		    <td colspan="2"><p align="left">conteúdo da janela 1</p></td>
+        </tr>
+    </table>
+</div>
+<div id="panel2" class="panel_style2">
+    <table bgcolor="#e0e0e0" width="100%" border="1" height="100%" class="table_style">
+        <tr bgcolor="#707070" height="20px">
+            <td width="100%"><font color=white><b>janela2</b></font></td>
+            <td align="center" valign="middle">
+                <a href="#" onclick="document.getElementById('panel2').style.display='none'">
+                <img border=0 src="app.images/ico_close.png"></a>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="2"><img src="app.images/gimp.png" border="0"></td>
+        </tr>
+     </table>
+</div>
